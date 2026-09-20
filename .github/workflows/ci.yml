@@ -16,10 +16,10 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@5
       
       - name: Setup python 
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
            python-version: ${{ matrix.python }}
       
@@ -35,7 +35,7 @@ jobs:
            ls -la artifacts
       
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: ml-artifacts-${{ matrix.python }}-${{ github.run_id }}
           path: artifacts
